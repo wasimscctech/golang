@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <div>
+        <h1>Trip form</h1>̥
+        <form action="form.php">
+            <input type="text" placeholder="Enter your name"><br>
+            ̥<label for="sectionida">
+                <input type="radio" value="section a" name="section" id="sectionida"> Section A
+            </label>
+            <label for="sectionidb">
+                <input type="radio" value="section b" name="section" id="sectionidb"> Section B
+            </label>
+            <label for="sectionidc">
+                <input type="radio" value="section c" name="section" id="sectionidc" class="red blue"> Section C
+                <!-- class will help in coloring in css --> <br>
+            </label>
+            <input type="checkbox" id="foodcanteen" class="red" name="canteen">
+            <label for="foodcanteen">Want Food Canteen Card</label><br>
+            <textarea name="explain" id="explain" cols="30" rows="10"
+                placeholder="Explain why you want to join"></textarea> <br>
+                <select name="car" id="car">
+                    <option value="no-car">Select Your car</option>
+                    <option value="tata">Tata</option>
+                    <option value="fiat">fiat</option>
+                    <option value="ford">ford</option>
+                    
+                </select>
+        </form>
+
+    </div>
+</body>
+
+</html>
