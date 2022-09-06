@@ -2,18 +2,52 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"strconv"
 )
 
-func main() {
+var newfilename2 *string
 
-	// Concurrency
-	go sampleRoutine() //due the sleep time the execution of sampleRoutine function will run in background and “started main” will be executed first
-	fmt.Println("Started Main")
-	time.Sleep(10 * time.Second) //this will hold the execution for 10 sec and then next line will get printed.
-	fmt.Println("Finished Main")
+func replaceunderscore(myFile string) {
+	for index := 0; index < len(myFile); index++ {
+		mynum, _ := strconv.Atoi(string(myFile[index]))
+		// fmt.Println(mynum)
+
+		if mynum != 0 {
+			// fmt.Println("this is index: ", index)
+			newFilename := myFile[:index] + myFile[index+1:]
+			newfilename2 = &newFilename
+		} else if string(myFile[index]) == "_" {
+			// fmt.Println("this is index: ", index)
+			newFilename := myFile[:index] + " " + myFile[index+1:]
+			newfilename2 = &newFilename
+		}
+	}
+	fmt.Println(*newfilename2)
 }
 
-func sampleRoutine() {
-	fmt.Println("Inside Sample Goroutine")
+// func replaceNumbers(){
+// 	mynum, _ := strconv.Atoi(myStr)
+// 	// fmt.Println(mynum)
+// 	if mynum != 0 {
+// 		myStr = ""
+// 	}
+// 	fmt.Println(myStr)
+// }
+
+func main() {
+	replaceunderscore("Wasim_Shai7k7h.txt")
+	// myFile := "W22"
+	// var newfilename2 *string
+
+	// for index := 0; index < len(myFile); index++ {
+	// 	mynum, _ := strconv.Atoi(string(myFile[index]))
+	// 	fmt.Println(mynum)
+	// 	if mynum != 0 {
+	// 		// fmt.Println("this is index: ", index)
+	// 		newFilename := myFile[:index] + myFile[index+1:]
+	// 		newfilename2 = &newFilename
+	// 	}
+	// }
+	// fmt.Println(*newfilename2)
+	// newString := strings.ReplaceAll(myFile, "_", " ")
 }
